@@ -224,6 +224,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\budgetApp.css" />
     <Content Include="Content\ui-grid.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -235,7 +236,14 @@
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\angular-chart.js" />
     <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\app\controller\barCtrl.js" />
+    <Content Include="Scripts\app\controller\baseCtrl.js" />
+    <Content Include="Scripts\app\controller\hbarCtrl.js" />
+    <Content Include="Scripts\app\controller\pieCtrl.js" />
+    <Content Include="Scripts\app\directive\fbWidget.js" />
+    <Content Include="Scripts\app\directive\searchBar.js" />
     <Content Include="Scripts\app\main.js" />
+    <Content Include="Scripts\app\service\budgetService.js" />
     <Content Include="Scripts\app\service\dataService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -252,6 +260,7 @@
     <Content Include="Data\budgetData.json" />
     <Content Include="Data\summaryType.json" />
     <Content Include="Data\summaryCompare.json" />
+    <None Include="Properties\PublishProfiles\app.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -268,7 +277,9 @@
     <Content Include="Scripts\ui-bootstrap-tpls-2.0.1.js" />
     <Content Include="Scripts\ui-grid.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Templates\test.html" />
+    <Content Include="Templates\fbComment.html" />
+    <Content Include="Templates\fbShare.html" />
+    <Content Include="Templates\searchBar.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -308,8 +319,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\app\controller\" />
-    <Folder Include="Scripts\app\directive\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
