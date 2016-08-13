@@ -2,7 +2,13 @@
     ViewBag.Title = "Home Page";
 }
 <search-bar></search-bar>
-<div class="gridStyle" ng-grid="gridOptions"></div>
+<div class="row top-buffer">
+<h4>工程筆數:{{filteredData.length}} | 
+    總預算:{{filteredData| sumByKey : 'BUDGET'| currency:'NT$':0}} | 
+    總花費:{{filteredData| sumByKey : 'AWARD_PRICE'| currency:'NT$':0}}</h4>
+ <div ui-grid="gridOptions" class="myGrid"></div>
+</div>
+ 
 <div class="row top-buffer">
 <div class="col-lg-6 col-sm-12" id="bar-chart" ng-controller="barCtrl">
     <div class="panel panel-default">
@@ -13,5 +19,5 @@
     </div>
 </div>
 </div>
-<fb-share></fb-share>
-<fb-comment></fb-comment>
+<!--<fb-share></fb-share>
+<fb-comment></fb-comment>-->

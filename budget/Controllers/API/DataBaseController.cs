@@ -10,8 +10,10 @@ namespace budget.Controllers.API
 {
     public class DataBaseController : ApiController
     {
+
         public DBHelper _dbhelper = new DBHelper();
 
+        [Route("~/api/database/GetENGINEERBUDGET")]
         [HttpGet]
         public List<ENGINEER_BUDGET> GetENGINEERBUDGET()
         {
@@ -25,6 +27,7 @@ namespace budget.Controllers.API
             }
         }
 
+        [Route("~/api/database/GetENGINEERINFO")]
         [HttpGet]
         public List<ENGINEER_INFO> GetENGINEERINFO()
         {
@@ -38,6 +41,7 @@ namespace budget.Controllers.API
             }
         }
 
+        [Route("~/api/database/GetNOTCLOSE")]
         [HttpGet]
         public List<NOT_CLOSE> GetNOTCLOSE()
         {

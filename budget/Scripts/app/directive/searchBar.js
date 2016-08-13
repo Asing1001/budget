@@ -12,8 +12,8 @@
         function link(scope){
             scope.search = search;
             function search(word) {                
-                $rootScope.searchResult = $rootScope.budgetData.filter(o=>{
-                    o.HOST.indexOf(word)!==-1 || o.ENGINEER_NAME.indexOf(word)!==-1 || o.COMPANY.indexOf(word)!==-1
+                $rootScope.filteredData = $rootScope.budgetData.filter(o=>{
+                    return o.HOST.indexOf(word)!==-1 || o.ENGINEER_NAME.indexOf(word)!==-1 || o.COMPANY.indexOf(word)!==-1
                 });
             }
         }
