@@ -3,6 +3,6 @@
     'use strict';
 
     angular
-        .module ('ngApp',['ui.bootstrap','chart.js','ngGrid'])
+        .module ('ngApp',['ui.bootstrap','chart.js','ui.grid'])
 
 } ());

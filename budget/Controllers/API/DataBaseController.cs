@@ -19,33 +19,33 @@ namespace budget.Controllers.API
             {
                 return _dbhelper.Get_ENGINEER_BUDGET();
             }
-            catch()
+            catch(Exception ex)
             {
                 return null;
             }
         }
 
         [HttpGet]
-        public List<ENGINEER_BUDGET> GetENGINEERINFO()
+        public List<ENGINEER_INFO> GetENGINEERINFO()
         {
             try
             {
                 return _dbhelper.Get_ENGINEER_INFO();
             }
-            catch()
+            catch(Exception ex)
             {
                 return null;
             }
         }
 
         [HttpGet]
-        public List<ENGINEER_BUDGET> GetNOTCLOSE()
+        public List<NOT_CLOSE> GetNOTCLOSE()
         {
             try
             {
                 return _dbhelper.Get_NOT_CLOSE();
             }
-            catch()
+            catch(Exception ex)
             {
                 return null;
             }
