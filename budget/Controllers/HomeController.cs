@@ -13,7 +13,7 @@ namespace budget.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Analyze()
         {
             ViewBag.Message = "Your application description page.";
 
