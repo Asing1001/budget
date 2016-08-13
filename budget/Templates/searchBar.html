@@ -3,8 +3,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-md" placeholder="budget name" />
-                    <span class="input-group-btn">
+                    <input type="text" class="form-control input-md" placeholder="budget name" ng-model="word" />
+                    <span class="input-group-btn" ng-click="search(word)">
                         <button class="btn btn-info btn-md" type="button">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>

@@ -6,7 +6,7 @@
         .factory('dataService', dataService)
 
     /** @ngInject */
-    function dataService($http, $q, $rootScope, $modal) {
+    function dataService($http, $q, $rootScope, $uibModal) {
         return {
             paramsMethod : ['GET', 'JSONP'],
             fetch: function (method, apiUrl, passdata, second) {
@@ -26,7 +26,7 @@
             },
             dialog: function (scope, options) {
                 options = options || { templateUrl: '/public/resource/templates/modal/messageDialog.html', controller: 'modalInstanceCtrl' };
-                var modalInstance = $modal.open({
+                var modalInstance = $uibModal.open({
                     scope: scope,
                     size: options['size'],
                     animation: options['animation'],
