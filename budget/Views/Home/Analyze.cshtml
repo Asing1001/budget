@@ -25,7 +25,16 @@
 </div>
 
 <div class="row top-buffer">
-
+<div class="col-lg-6 col-sm-12" id="bar-chart" ng-controller="hbarCtrl">
+        <div class="panel panel-default">
+            <div class="panel-heading">前五大網友熱議圖</div>
+            <div class="panel-body">
+               <canvas id="base" class="chart-horizontal-bar"
+  chart-data="data" chart-labels="labels" >
+</canvas> 
+            </div>
+        </div>
+    </div>
 </div>
 
 <fb-share></fb-share>
