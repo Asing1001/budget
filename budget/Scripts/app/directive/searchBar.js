@@ -11,12 +11,10 @@
     function searchBar(dataService,$rootScope) {
         function link(scope){
             scope.search = search;
-            function search(word) {
-                console.log(word);
-                // var promise = dataService.fetch('get','/api/data');
-                // promise.then(data=>$rootScope.data=data);
-                  $rootScope.test = word;
-
+            function search(word) {                
+                $rootScope.searchResult = $rootScope.budgetData.filter(o=>{
+                    o.HOST.indexOf(word)!==-1 || o.ENGINEER_NAME.indexOf(word)!==-1 || o.COMPANY.indexOf(word)!==-1
+                });
             }
         }
 

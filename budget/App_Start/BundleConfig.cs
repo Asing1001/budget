@@ -21,7 +21,9 @@ namespace budget
             "~/Scripts/angular.js",
             "~/Scripts/Chart.js",
             "~/Scripts/angular-chart.js",
-            "~/Scripts/ui-bootstrap-tpls-2.0.1.js"));
+            "~/Scripts/ui-bootstrap-tpls-2.0.1.js",
+            "~/Scripts/ui-grid.min.js"
+            ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -38,7 +40,8 @@ namespace budget
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/budgetApp.css"
+                      "~/Content/budgetApp.css",
+                      "~/Content/ui-grid.min.css"
                       ));
         }
     }

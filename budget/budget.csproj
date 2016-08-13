@@ -224,6 +224,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ui-grid.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -258,6 +259,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-2.0.1.js" />
+    <Content Include="Scripts\ui-grid.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Templates\test.html" />
     <Content Include="Web.config" />
