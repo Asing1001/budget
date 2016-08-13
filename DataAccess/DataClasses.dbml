@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="budget" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=budget;Integrated Security=True" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="budgetConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ENGINEER_BUDGET" Member="ENGINEER_BUDGET">
+    <Type Name="ENGINEER_BUDGET">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HOST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENGINEER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPSET_PRICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AWARD_PRICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COMPANY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENGINEER_INFO" Member="ENGINEER_INFO">
+    <Type Name="ENGINEER_INFO">
+      <Column Name="AC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ST_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPMODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="X" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Y" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="APPTIME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="APP_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="C_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ADDR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CB_DA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CE_DA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CO_TI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TC_MA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TC_MA3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NPURP" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DTYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NOT_CLOSE" Member="NOT_CLOSE">
+    <Type Name="NOT_CLOSE">
+      <Column Name="ID" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="HOST" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ENGINEER_NAME" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="CONTRACT_NUM" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="COMPANY" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="AWARD_PRICE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="EX_PRICE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="SCHEDULED_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RE_SCHEDULED_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="REAL_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ACCEPT_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ACCEPT_DATE2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RE_ACCEPT_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RE_ACCEPT_DATE2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="FINISH_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RE_FINISH_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
