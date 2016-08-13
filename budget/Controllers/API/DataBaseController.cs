@@ -12,7 +12,7 @@ namespace budget.Controllers.API
     {
         public DBHelper _dbhelper = new DBHelper();
 
-        [HttpPost]
+        [HttpGet]
         public List<ENGINEER_BUDGET> GetData()
         {
            return  _dbhelper.Get_ENGINEER_BUDGET();
