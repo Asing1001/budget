@@ -32,5 +32,16 @@ namespace DataAccess.Properties {
                 return ((string)(this["budgetConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=southasia.database.windows.net;Initial Catalog=budgetDB;User ID=comma" +
+            "")]
+        public string budgetDBConnectionString {
+            get {
+                return ((string)(this["budgetDBConnectionString"]));
+            }
+        }
     }
 }

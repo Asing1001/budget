@@ -39,6 +39,30 @@ namespace DataAccess
             {
                 return (from q in db.NOT_CLOSE select q).ToList(); 
             }
-        } 
+        }
+
+        public List<SUMMARY_TYPE> Get_SUMMARY_TYPE()
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext(connectionStr))
+            {
+                return (from q in db.SUMMARY_TYPE select q).ToList();
+            }
+        }
+
+        public List<SUMMARY_COMPARE> Get_SUMMARY_COMPARE()
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext(connectionStr))
+            {
+                return (from q in db.SUMMARY_COMPARE select q).ToList();
+            }
+        }
+
+        //public List<NOT_CLOSE> Get_TOP5AGREE()
+        //{
+        //    using (DataClassesDataContext db = new DataClassesDataContext(connectionStr))
+        //    {
+        //        return (from q in db.ENGINEER_BUDGET select q).OrderBy(o => o.AGREE desc).ToList();
+        //    }
+        //}
     }
 }

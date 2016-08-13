@@ -54,5 +54,33 @@ namespace budget.Controllers.API
                 return null;
             }
         }
+
+        [Route("~/api/database/GetSUMMARYCOMPARE")]
+        [HttpGet]
+        public List<SUMMARY_COMPARE> Get_SUMMARY_COMPARE()
+        {
+            try
+            {
+                return _dbhelper.Get_SUMMARY_COMPARE();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [Route("~/api/database/GetSUMMARYTYPE")]
+        [HttpGet]
+        public List<SUMMARY_TYPE> Get_SUMMARY_TYPE()
+        {
+            try
+            {
+                return _dbhelper.Get_SUMMARY_TYPE();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

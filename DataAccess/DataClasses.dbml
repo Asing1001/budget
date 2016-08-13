@@ -1,17 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="budget" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=budget;Integrated Security=True" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="budgetConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.ENGINEER_BUDGET" Member="ENGINEER_BUDGET">
-    <Type Name="ENGINEER_BUDGET">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HOST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ENGINEER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="BUDGET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="UPSET_PRICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="AWARD_PRICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="DATE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="COMPANY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="budgetDB" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=southasia.database.windows.net;Initial Catalog=budgetDB;User ID=comma" SettingsObjectName="DataAccess.Properties.Settings" SettingsPropertyName="budgetDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ENGINEER_INFO" Member="ENGINEER_INFO">
     <Type Name="ENGINEER_INFO">
       <Column Name="AC_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
@@ -53,6 +41,39 @@
       <Column Name="RE_ACCEPT_DATE2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="FINISH_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="RE_FINISH_DATE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ENGINEER_BUDGET" Member="ENGINEER_BUDGET">
+    <Type Name="ENGINEER_BUDGET">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HOST" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ENGINEER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPSET_PRICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AWARD_PRICE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COMPANY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DISAGREE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="D_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="M_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Y_RANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SUMMARY_COMPARE" Member="SUMMARY_COMPARE">
+    <Type Name="SUMMARY_COMPARE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HIGH_BUDGET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LOW_BUDGET" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HIGH_NAME" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LOW_NAME" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SUMMARY_TYPE" Member="SUMMARY_TYPE">
+    <Type Name="SUMMARY_TYPE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TYPE" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="AWARD_PRICE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

@@ -22,7 +22,7 @@ namespace DataAccess
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="budget")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="budgetDB")]
 	public partial class DataClassesDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,10 +30,16 @@ namespace DataAccess
 		
     #region 擴充性方法定義
     partial void OnCreated();
+    partial void InsertSUMMARY_COMPARE(SUMMARY_COMPARE instance);
+    partial void UpdateSUMMARY_COMPARE(SUMMARY_COMPARE instance);
+    partial void DeleteSUMMARY_COMPARE(SUMMARY_COMPARE instance);
+    partial void InsertSUMMARY_TYPE(SUMMARY_TYPE instance);
+    partial void UpdateSUMMARY_TYPE(SUMMARY_TYPE instance);
+    partial void DeleteSUMMARY_TYPE(SUMMARY_TYPE instance);
     #endregion
 		
 		public DataClassesDataContext() : 
-				base(global::DataAccess.Properties.Settings.Default.budgetConnectionString, mappingSource)
+				base(global::DataAccess.Properties.Settings.Default.budgetDBConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,14 +68,6 @@ namespace DataAccess
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<ENGINEER_BUDGET> ENGINEER_BUDGET
-		{
-			get
-			{
-				return this.GetTable<ENGINEER_BUDGET>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ENGINEER_INFO> ENGINEER_INFO
 		{
 			get
@@ -85,157 +83,28 @@ namespace DataAccess
 				return this.GetTable<NOT_CLOSE>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ENGINEER_BUDGET")]
-	public partial class ENGINEER_BUDGET
-	{
 		
-		private int _ID;
-		
-		private string _HOST;
-		
-		private string _ENGINEER_NAME;
-		
-		private string _BUDGET;
-		
-		private string _UPSET_PRICE;
-		
-		private string _AWARD_PRICE;
-		
-		private string _DATE;
-		
-		private string _COMPANY;
-		
-		public ENGINEER_BUDGET()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
+		public System.Data.Linq.Table<ENGINEER_BUDGET> ENGINEER_BUDGET
 		{
 			get
 			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
+				return this.GetTable<ENGINEER_BUDGET>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOST", DbType="NVarChar(MAX)")]
-		public string HOST
+		public System.Data.Linq.Table<SUMMARY_COMPARE> SUMMARY_COMPARE
 		{
 			get
 			{
-				return this._HOST;
-			}
-			set
-			{
-				if ((this._HOST != value))
-				{
-					this._HOST = value;
-				}
+				return this.GetTable<SUMMARY_COMPARE>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ENGINEER_NAME", DbType="NVarChar(MAX)")]
-		public string ENGINEER_NAME
+		public System.Data.Linq.Table<SUMMARY_TYPE> SUMMARY_TYPE
 		{
 			get
 			{
-				return this._ENGINEER_NAME;
-			}
-			set
-			{
-				if ((this._ENGINEER_NAME != value))
-				{
-					this._ENGINEER_NAME = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BUDGET", DbType="NVarChar(MAX)")]
-		public string BUDGET
-		{
-			get
-			{
-				return this._BUDGET;
-			}
-			set
-			{
-				if ((this._BUDGET != value))
-				{
-					this._BUDGET = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPSET_PRICE", DbType="NVarChar(MAX)")]
-		public string UPSET_PRICE
-		{
-			get
-			{
-				return this._UPSET_PRICE;
-			}
-			set
-			{
-				if ((this._UPSET_PRICE != value))
-				{
-					this._UPSET_PRICE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AWARD_PRICE", DbType="NVarChar(MAX)")]
-		public string AWARD_PRICE
-		{
-			get
-			{
-				return this._AWARD_PRICE;
-			}
-			set
-			{
-				if ((this._AWARD_PRICE != value))
-				{
-					this._AWARD_PRICE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE", DbType="NVarChar(MAX)")]
-		public string DATE
-		{
-			get
-			{
-				return this._DATE;
-			}
-			set
-			{
-				if ((this._DATE != value))
-				{
-					this._DATE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPANY", DbType="NVarChar(MAX)")]
-		public string COMPANY
-		{
-			get
-			{
-				return this._COMPANY;
-			}
-			set
-			{
-				if ((this._COMPANY != value))
-				{
-					this._COMPANY = value;
-				}
+				return this.GetTable<SUMMARY_TYPE>();
 			}
 		}
 	}
@@ -884,6 +753,517 @@ namespace DataAccess
 				{
 					this._RE_FINISH_DATE = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ENGINEER_BUDGET")]
+	public partial class ENGINEER_BUDGET
+	{
+		
+		private int _ID;
+		
+		private string _HOST;
+		
+		private string _ENGINEER_NAME;
+		
+		private string _BUDGET;
+		
+		private string _UPSET_PRICE;
+		
+		private string _AWARD_PRICE;
+		
+		private string _DATE;
+		
+		private string _COMPANY;
+		
+		private System.Nullable<int> _AGREE;
+		
+		private System.Nullable<int> _DISAGREE;
+		
+		private System.Nullable<int> _D_RANK;
+		
+		private System.Nullable<int> _M_RANK;
+		
+		private System.Nullable<int> _Y_RANK;
+		
+		public ENGINEER_BUDGET()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOST", DbType="NVarChar(MAX)")]
+		public string HOST
+		{
+			get
+			{
+				return this._HOST;
+			}
+			set
+			{
+				if ((this._HOST != value))
+				{
+					this._HOST = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ENGINEER_NAME", DbType="NVarChar(MAX)")]
+		public string ENGINEER_NAME
+		{
+			get
+			{
+				return this._ENGINEER_NAME;
+			}
+			set
+			{
+				if ((this._ENGINEER_NAME != value))
+				{
+					this._ENGINEER_NAME = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BUDGET", DbType="NVarChar(MAX)")]
+		public string BUDGET
+		{
+			get
+			{
+				return this._BUDGET;
+			}
+			set
+			{
+				if ((this._BUDGET != value))
+				{
+					this._BUDGET = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UPSET_PRICE", DbType="NVarChar(MAX)")]
+		public string UPSET_PRICE
+		{
+			get
+			{
+				return this._UPSET_PRICE;
+			}
+			set
+			{
+				if ((this._UPSET_PRICE != value))
+				{
+					this._UPSET_PRICE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AWARD_PRICE", DbType="NVarChar(MAX)")]
+		public string AWARD_PRICE
+		{
+			get
+			{
+				return this._AWARD_PRICE;
+			}
+			set
+			{
+				if ((this._AWARD_PRICE != value))
+				{
+					this._AWARD_PRICE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE", DbType="NVarChar(MAX)")]
+		public string DATE
+		{
+			get
+			{
+				return this._DATE;
+			}
+			set
+			{
+				if ((this._DATE != value))
+				{
+					this._DATE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COMPANY", DbType="NVarChar(MAX)")]
+		public string COMPANY
+		{
+			get
+			{
+				return this._COMPANY;
+			}
+			set
+			{
+				if ((this._COMPANY != value))
+				{
+					this._COMPANY = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AGREE", DbType="Int")]
+		public System.Nullable<int> AGREE
+		{
+			get
+			{
+				return this._AGREE;
+			}
+			set
+			{
+				if ((this._AGREE != value))
+				{
+					this._AGREE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DISAGREE", DbType="Int")]
+		public System.Nullable<int> DISAGREE
+		{
+			get
+			{
+				return this._DISAGREE;
+			}
+			set
+			{
+				if ((this._DISAGREE != value))
+				{
+					this._DISAGREE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_D_RANK", DbType="Int")]
+		public System.Nullable<int> D_RANK
+		{
+			get
+			{
+				return this._D_RANK;
+			}
+			set
+			{
+				if ((this._D_RANK != value))
+				{
+					this._D_RANK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_M_RANK", DbType="Int")]
+		public System.Nullable<int> M_RANK
+		{
+			get
+			{
+				return this._M_RANK;
+			}
+			set
+			{
+				if ((this._M_RANK != value))
+				{
+					this._M_RANK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Y_RANK", DbType="Int")]
+		public System.Nullable<int> Y_RANK
+		{
+			get
+			{
+				return this._Y_RANK;
+			}
+			set
+			{
+				if ((this._Y_RANK != value))
+				{
+					this._Y_RANK = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SUMMARY_COMPARE")]
+	public partial class SUMMARY_COMPARE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private int _HIGH_BUDGET;
+		
+		private int _LOW_BUDGET;
+		
+		private string _HIGH_NAME;
+		
+		private string _LOW_NAME;
+		
+    #region 擴充性方法定義
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnHIGH_BUDGETChanging(int value);
+    partial void OnHIGH_BUDGETChanged();
+    partial void OnLOW_BUDGETChanging(int value);
+    partial void OnLOW_BUDGETChanged();
+    partial void OnHIGH_NAMEChanging(string value);
+    partial void OnHIGH_NAMEChanged();
+    partial void OnLOW_NAMEChanging(string value);
+    partial void OnLOW_NAMEChanged();
+    #endregion
+		
+		public SUMMARY_COMPARE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HIGH_BUDGET", DbType="Int NOT NULL")]
+		public int HIGH_BUDGET
+		{
+			get
+			{
+				return this._HIGH_BUDGET;
+			}
+			set
+			{
+				if ((this._HIGH_BUDGET != value))
+				{
+					this.OnHIGH_BUDGETChanging(value);
+					this.SendPropertyChanging();
+					this._HIGH_BUDGET = value;
+					this.SendPropertyChanged("HIGH_BUDGET");
+					this.OnHIGH_BUDGETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOW_BUDGET", DbType="Int NOT NULL")]
+		public int LOW_BUDGET
+		{
+			get
+			{
+				return this._LOW_BUDGET;
+			}
+			set
+			{
+				if ((this._LOW_BUDGET != value))
+				{
+					this.OnLOW_BUDGETChanging(value);
+					this.SendPropertyChanging();
+					this._LOW_BUDGET = value;
+					this.SendPropertyChanged("LOW_BUDGET");
+					this.OnLOW_BUDGETChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HIGH_NAME", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string HIGH_NAME
+		{
+			get
+			{
+				return this._HIGH_NAME;
+			}
+			set
+			{
+				if ((this._HIGH_NAME != value))
+				{
+					this.OnHIGH_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._HIGH_NAME = value;
+					this.SendPropertyChanged("HIGH_NAME");
+					this.OnHIGH_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOW_NAME", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string LOW_NAME
+		{
+			get
+			{
+				return this._LOW_NAME;
+			}
+			set
+			{
+				if ((this._LOW_NAME != value))
+				{
+					this.OnLOW_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._LOW_NAME = value;
+					this.SendPropertyChanged("LOW_NAME");
+					this.OnLOW_NAMEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SUMMARY_TYPE")]
+	public partial class SUMMARY_TYPE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _TYPE;
+		
+		private int _AWARD_PRICE;
+		
+    #region 擴充性方法定義
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTYPEChanging(string value);
+    partial void OnTYPEChanged();
+    partial void OnAWARD_PRICEChanging(int value);
+    partial void OnAWARD_PRICEChanged();
+    #endregion
+		
+		public SUMMARY_TYPE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string TYPE
+		{
+			get
+			{
+				return this._TYPE;
+			}
+			set
+			{
+				if ((this._TYPE != value))
+				{
+					this.OnTYPEChanging(value);
+					this.SendPropertyChanging();
+					this._TYPE = value;
+					this.SendPropertyChanged("TYPE");
+					this.OnTYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AWARD_PRICE", DbType="Int NOT NULL")]
+		public int AWARD_PRICE
+		{
+			get
+			{
+				return this._AWARD_PRICE;
+			}
+			set
+			{
+				if ((this._AWARD_PRICE != value))
+				{
+					this.OnAWARD_PRICEChanging(value);
+					this.SendPropertyChanging();
+					this._AWARD_PRICE = value;
+					this.SendPropertyChanged("AWARD_PRICE");
+					this.OnAWARD_PRICEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
