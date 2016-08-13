@@ -8,8 +8,20 @@ namespace budget
         // 如需「搭配」的詳細資訊，請瀏覽 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/budgetApp").Include(
+            "~/Scripts/app/*.js",
+            "~/Scripts/app/service/*.js",
+            "~/Scripts/app/directive/*.js",
+            "~/Scripts/app/controller/*.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+            "~/Scripts/angular.js",
+            "~/Scripts/Chart.js",
+            "~/Scripts/angular-chart.js",
+            "~/Scripts/ui-bootstrap-tpls-2.0.1.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,7 +37,9 @@ namespace budget
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/budgetApp.css"
+                      ));
         }
     }
 }
