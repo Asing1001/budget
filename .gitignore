@@ -73,3 +73,6 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+budget/budget.csproj.user
+.vs/budget/v14/.suo
+.vs/config/applicationhost.config
