@@ -82,5 +82,33 @@ namespace budget.Controllers.API
                 return null;
             }
         }
+
+        [Route("~/api/database/GetTOP5AGREE")]
+        [HttpGet]
+        public List<ENGINEER_BUDGET> Get_TOP5AGREE()
+        {
+            try
+            {
+                return _dbhelper.Get_TOP5AGREE();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        [Route("~/api/database/GetTOP5DISAGREE")]
+        [HttpGet]
+        public List<ENGINEER_BUDGET> Get_TOP5DISAGREE()
+        {
+            try
+            {
+                return _dbhelper.Get_TOP5DISAGREE();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

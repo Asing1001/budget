@@ -57,12 +57,26 @@ namespace DataAccess
             }
         }
 
-        //public List<NOT_CLOSE> Get_TOP5AGREE()
-        //{
-        //    using (DataClassesDataContext db = new DataClassesDataContext(connectionStr))
-        //    {
-        //        return (from q in db.ENGINEER_BUDGET select q).OrderBy(o => o.AGREE desc).ToList();
-        //    }
-        //}
+        public List<ENGINEER_BUDGET> Get_TOP5AGREE()
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext(connectionStr))
+            {
+                var list = (from q in db.ENGINEER_BUDGET
+                           orderby q.AGREE descending
+                           select q).Take(5).ToList();
+                return list;
+            }
+        }
+        
+        public List<ENGINEER_BUDGET> Get_TOP5DISAGREE()
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext(connectionStr))
+            {
+                var list = (from q in db.ENGINEER_BUDGET
+                            orderby q.DISAGREE descending
+                            select q).Take(5).ToList();
+                return list;
+            }
+        }
     }
 }
