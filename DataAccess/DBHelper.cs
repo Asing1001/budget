@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace DataAccess
 {
     public class DBHelper
-    {        
-        //public static string connectionStr = "Data Source=southasia.database.windows.net;Initial Catalog=budgetDB;User ID=testuser;Password=MYPASSWORDHERE";
+    {
+        //public static string connectionStr = "Data Source=southasia.database.windows.net;Initial Catalog=budgetDB;User ID=comma;Password=c@mma123";
         //public static string connectionStr = "Data Source=127.0.0.1;Initial Catalog=budget;Integrated Security=True";
         public static string connectionStr = "Server=tcp:southasia.database.windows.net,1433;Initial Catalog=budgetDB;Persist Security Info=False;User ID=comma;Password=C@mma123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
        
