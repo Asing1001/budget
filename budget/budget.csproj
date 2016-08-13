@@ -250,6 +250,8 @@
     <Content Include="Content\ui-grid.eot" />
     <Content Include="Content\ui-grid.woff" />
     <Content Include="Data\budgetData.json" />
+    <Content Include="Data\summaryType.json" />
+    <Content Include="Data\summaryCompare.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

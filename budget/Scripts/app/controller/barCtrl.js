@@ -1,9 +1,20 @@
-angular.module('ngApp').controller("barCtrl", function ($scope) {
-  $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  $scope.series = ['年度工程預算'];
+angular.module('ngApp').controller("barCtrl", function ($scope,dataService) {
+  $scope.labels = ['雨水下水道預約維護工程（士林、大同區）(第一標)',
+   '南區河濱公園綠化預約維護工程', '全市LED照明裝設預約工程'];
+  $scope.series = ['104', '105'];
 
   $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
+    [17303000,5030000,1150000],
+    [9910000,2500000,810000]
   ];
+ $scope.options = {
+        scales:
+        {
+            xAxes: [{
+                display: false
+            }]
+        }
+    };
+  
 
 });

@@ -1,0 +1,27 @@
+﻿[
+  {
+    "ID": 2,
+    "TYPE": "國防",
+    "AWARD_PRICE": 3095
+  },
+  {
+    "ID": 3,
+    "TYPE": "社會保險",
+    "AWARD_PRICE": 2780
+  },
+  {
+    "ID": 4,
+    "TYPE": "教育",
+    "AWARD_PRICE": 2411
+  },
+  {
+    "ID": 6,
+    "TYPE": "退休撫卹",
+    "AWARD_PRICE": 1381
+  },
+  {
+    "ID": 8,
+    "TYPE": "交通",
+    "AWARD_PRICE": 1328
+  }
+]

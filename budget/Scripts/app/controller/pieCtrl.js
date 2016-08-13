@@ -1,4 +1,15 @@
-angular.module("ngApp").controller("pieCtrl", function ($scope) {
-  $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
-  $scope.data = [300, 500, 100];
+angular.module("ngApp").controller("pieCtrl", function ($scope, dataService) {
+    $scope.labels = [];
+    $scope.data = [];
+
+    dataService.fetch('get', $scope.debug? '/api/database/GetSUMMARYTYPE' : '/data/summaryType.json').then(data => {
+        data.forEach(o => {
+            $scope.labels.push(o.TYPE);
+            $scope.data.push(o.AWARD_PRICE);
+
+        })
+
+
+    })
+
 });
